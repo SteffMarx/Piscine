@@ -1,0 +1,2 @@
+#!/bin/bash
+ls -lt --group-directories-first --time=mtime | awk '{if (NR>1 && $9 !~ /^\./) print $9 (substr($1,1,1) == "d" ? "/" : "")}' | paste -sd ","
